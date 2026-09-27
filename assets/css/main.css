@@ -1,0 +1,154 @@
+/* ==========================================================================
+   Lindenbüdchen — design tokens
+   Warm mid-century kiosk identity.
+   ========================================================================== */
+
+:root {
+  /* Color */
+  --linden-cream: #f4ede0;
+  --linden-cream-soft: #ece2cf;
+  --linden-card: #ede4d3;
+  --linden-green-900: #1f2f26;
+  --linden-green-700: #2f4a3c;
+  --linden-green-600: #3c5c4a;
+  --linden-green-100: #dde8e0;
+  --linden-terracotta: #bb5a2c;
+  --linden-terracotta-600: #a34e26;
+  --linden-terracotta-100: #f3ded1;
+  --linden-charcoal: #2a2620;
+  --linden-charcoal-soft: #55504a;
+  --linden-line: rgba(42, 38, 32, 0.12);
+
+  --linden-shadow-soft: 0 12px 30px -14px rgba(31, 47, 38, 0.35);
+  --linden-shadow-card: 0 8px 20px -12px rgba(31, 47, 38, 0.28);
+
+  --linden-radius-lg: 28px;
+  --linden-radius-md: 18px;
+  --linden-radius-sm: 12px;
+
+  --font-display: 'Bricolage Grotesque', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--linden-cream);
+  color: var(--linden-charcoal);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--linden-green-900);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  color: var(--linden-charcoal-soft);
+}
+
+a {
+  color: inherit;
+}
+
+.linden-container {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .linden-container {
+    padding-inline: 2.5rem;
+  }
+}
+
+.linden-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--linden-terracotta-600);
+}
+
+.linden-card {
+  background: var(--linden-card);
+  border-radius: var(--linden-radius-md);
+  border: 1px solid var(--linden-line);
+  box-shadow: var(--linden-shadow-card);
+}
+
+:focus-visible {
+  outline: 3px solid var(--linden-terracotta);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  background: var(--linden-green-900);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 1.5rem;
+  top: 1rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: var(--linden-terracotta-100);
+  color: var(--linden-green-900);
+}
