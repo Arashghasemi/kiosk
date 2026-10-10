@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { weeklyHours } from '~/data/openingHours'
+import { getActiveWeeklyHours } from '~/data/openingHours'
 
 const { t } = useI18n()
 
@@ -21,7 +21,8 @@ const todayIndex = computed(() => now.value.getDay())
 const orderedDays = computed(() => {
   // Present the week starting Monday, ending Sunday.
   const order = [1, 2, 3, 4, 5, 6, 0]
-  return order.map((day) => weeklyHours.find((h) => h.day === day)!).filter(Boolean)
+  const activeHours = getActiveWeeklyHours(now.value)
+  return order.map((day) => activeHours.find((h) => h.day === day)!).filter(Boolean)
 })
 </script>
 

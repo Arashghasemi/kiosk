@@ -1,5 +1,5 @@
 import { computed, type ComputedRef } from 'vue'
-import { weeklyHours, holidayHours } from '~/data/openingHours'
+import { getActiveWeeklyHours, holidayHours } from '~/data/openingHours'
 
 export type OpeningState = 'open' | 'closed' | 'opensAt' | 'closesSoon'
 
@@ -32,7 +32,7 @@ export function useOpeningStatus(now: ComputedRef<Date> | Date = new Date()): Co
     const minutesNow = current.getHours() * 60 + current.getMinutes()
 
     const holiday = holidayHours.find((h) => h.date === iso)
-    const todaySchedule = holiday ?? weeklyHours.find((h) => h.day === day)
+    const todaySchedule = holiday ?? getActiveWeeklyHours(current).find((h) => h.day === day)
 
     if (!todaySchedule || todaySchedule.open === null || todaySchedule.close === null) {
       return { state: 'closed', time: null, todayOpen: null, todayClose: null }

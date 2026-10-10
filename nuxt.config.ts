@@ -5,6 +5,11 @@ export default defineNuxtConfig({
 
   modules: ['@nuxt/ui', '@nuxtjs/i18n'],
 
+  runtimeConfig: {
+    // Set via the NUXT_RESEND_API_KEY environment variable (Vercel → Settings → Environment Variables).
+    resendApiKey: ''
+  },
+
   css: ['~/assets/css/main.css'],
 
   app: {

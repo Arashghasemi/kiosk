@@ -107,6 +107,7 @@ export default {
       "6": "Saturday"
     },
     "closedLabel": "Closed",
+    "upcomingChangeNote": "Heads up: from 31 October 2026 we'll be closed on Saturdays. Sundays continue as usual.",
     "holidayNote": "We announce any special holiday hours in good time under \"News\".",
     "holiday": {
       "christmasEve": "Christmas Eve"
@@ -124,21 +125,13 @@ export default {
       "offer": "Offer"
     },
     "items": {
-      "newProducts": {
-        "title": "New products have arrived",
-        "body": "We're expanding our fridge with regional lemonades and alcohol-free options. Come by and try something new."
+      "parcelHermes": {
+        "title": "Parcel shop update: Hermes instead of DHL",
+        "body": "From 1 September 2026, DHL will no longer be available with us. In its place, we're once again a Hermes parcel shop — dropping off, picking up and returning parcels all continue as usual."
       },
-      "parcelUpdate": {
-        "title": "Changes at the parcel shop",
-        "body": "From September we're also accepting UPS returns. DPD, Hermes and GLS continue as usual."
-      },
-      "holidayHours": {
-        "title": "Holiday opening hours",
-        "body": "As always, we'll publish opening hours around the holidays here and on our shop door well in advance."
-      },
-      "summerOffer": {
-        "title": "Offers and promotions",
-        "body": "This summer, buy two popsicles and get a third at half price — while stocks last."
+      "saturdayClosed": {
+        "title": "New opening hours from late October",
+        "body": "Starting 31 October 2026, our opening hours are changing: from that date we'll be closed on Saturdays. Sundays continue as usual."
       }
     }
   },
@@ -154,6 +147,7 @@ export default {
     "messageError": "Please write us a few words (at least 10 characters).",
     "ratingError": "Please choose a rating from 1 to 5 stars.",
     "submit": "Send feedback",
+    "submitError": "Sorry, that didn't send. Mind trying again?",
     "submitting": "Sending …",
     "successTitle": "Thanks for your feedback!",
     "successBody": "We've received your message and will read it carefully.",
@@ -165,17 +159,22 @@ export default {
     "title": "How to find us",
     "subtitle": "Come by or give us a call — we're happy to help.",
     "addressLabel": "Address",
-    "addressPlaceholder": "Musterstraße 1, 40210 Düsseldorf",
     "phoneLabel": "Phone",
-    "phonePlaceholder": "+49 (0) 211 000000",
+    "phonePlaceholder": "not added yet",
+    "emailLabel": "Email",
     "mapCta": "Plan a route",
-    "placeholderNote": "Placeholder — please replace with the real contact details."
+    "placeholderNote": "Note: the phone number is still a placeholder — please replace it with the real one once it's set."
+  },
+  "legal": {
+    "eyebrow": "Legal",
+    "title": "Impressum & Datenschutz",
+    "subtitle": "Legally required information and details on how this website handles your data."
   },
   "footer": {
     "tagline": "Your neighborhood kiosk.",
     "rights": "All rights reserved.",
-    "madeWith": "Run with love in the neighborhood.",
-    "legal": "Legal notice & privacy",
+    "madeWith": "Made with love in Düsseldorf by Arash.",
+    "legal": "Impressum & Datenschutz",
     "quickLinks": "Quick links",
     "getInTouch": "Get in touch"
   },

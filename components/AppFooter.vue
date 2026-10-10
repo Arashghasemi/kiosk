@@ -36,7 +36,7 @@ const year = new Date().getFullYear()
             <NuxtLink :to="localePath('/kontakt')">{{ t('nav.contact') }}</NuxtLink>
           </li>
           <li>
-            <a href="#" aria-disabled="true">{{ t('footer.legal') }}</a>
+            <NuxtLink :to="localePath('/impressum')">{{ t('footer.legal') }}</NuxtLink>
           </li>
         </ul>
       </div>

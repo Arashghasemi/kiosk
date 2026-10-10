@@ -12,6 +12,7 @@ const form = reactive<FeedbackFormState>({
 const hoverRating = ref(0)
 const isSubmitting = ref(false)
 const isSubmitted = ref(false)
+const submitFailed = ref(false)
 const touched = reactive({ rating: false, message: false })
 
 const messageError = computed(() => {
@@ -37,14 +38,19 @@ async function handleSubmit() {
   if (!isValid.value) return
 
   isSubmitting.value = true
+  submitFailed.value = false
 
-  // Frontend-only for now. This is the single place to wire up a real
-  // backend later, e.g.:
-  // await $fetch('/api/feedback', { method: 'POST', body: { ...form } })
-  await new Promise((resolve) => setTimeout(resolve, 700))
-
-  isSubmitting.value = false
-  isSubmitted.value = true
+  try {
+    await $fetch('/api/feedback', {
+      method: 'POST',
+      body: { name: form.name, rating: form.rating, message: form.message }
+    })
+    isSubmitted.value = true
+  } catch {
+    submitFailed.value = true
+  } finally {
+    isSubmitting.value = false
+  }
 }
 
 function resetForm() {
@@ -54,6 +60,7 @@ function resetForm() {
   touched.rating = false
   touched.message = false
   isSubmitted.value = false
+  submitFailed.value = false
 }
 </script>
 
@@ -126,6 +133,8 @@ function resetForm() {
             {{ messageError }}
           </p>
         </div>
+
+        <p v-if="submitFailed" class="feedback-field__error" role="alert">{{ t('feedback.submitError') }}</p>
 
         <button type="submit" class="feedback-form__submit-btn" :disabled="isSubmitting">
           {{ isSubmitting ? t('feedback.submitting') : t('feedback.submit') }}

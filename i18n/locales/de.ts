@@ -107,6 +107,7 @@ export default {
       "6": "Samstag"
     },
     "closedLabel": "Geschlossen",
+    "upcomingChangeNote": "Hinweis: Ab dem 31. Oktober 2026 haben wir samstags geschlossen. Sonntags sind wir wie gewohnt für dich da.",
     "holidayNote": "Abweichende Feiertagsöffnungszeiten geben wir rechtzeitig unter „Aktuelles“ bekannt.",
     "holiday": {
       "christmasEve": "Heiligabend"
@@ -124,21 +125,13 @@ export default {
       "offer": "Aktion"
     },
     "items": {
-      "newProducts": {
-        "title": "Neue Produkte eingetroffen",
-        "body": "Ab sofort erweitern wir unser Kühlregal um regionale Limonaden und alkoholfreie Sorten. Schau gern vorbei und probier dich durch."
+      "parcelHermes": {
+        "title": "Wechsel beim Paketshop: Hermes statt DHL",
+        "body": "Ab dem 1. September 2026 ist DHL bei uns leider nicht mehr verfügbar. Dafür sind wir wieder Hermes-Paketshop – Pakete abgeben, abholen und Retouren sind bei uns wie gewohnt möglich."
       },
-      "parcelUpdate": {
-        "title": "Änderungen beim Paketshop",
-        "body": "Ab September nehmen wir zusätzlich Retouren für UPS entgegen. DPD, Hermes und GLS wie gewohnt."
-      },
-      "holidayHours": {
-        "title": "Feiertagsöffnungszeiten",
-        "body": "Die Öffnungszeiten rund um die Feiertage veröffentlichen wir wie immer rechtzeitig hier und an der Ladentür."
-      },
-      "summerOffer": {
-        "title": "Aktionen und Angebote",
-        "body": "Diesen Sommer gibt es beim Kauf von zwei Eis am Stiel das dritte zum halben Preis – solange der Vorrat reicht."
+      "saturdayClosed": {
+        "title": "Neue Öffnungszeiten ab Ende Oktober",
+        "body": "Ab dem 31. Oktober 2026 ändern sich unsere Öffnungszeiten: Samstags bleibt der Kiosk ab diesem Datum geschlossen. Sonntags sind wir weiterhin wie gewohnt für dich da."
       }
     }
   },
@@ -154,6 +147,7 @@ export default {
     "messageError": "Bitte schreib uns ein paar Worte (mindestens 10 Zeichen).",
     "ratingError": "Bitte wähle eine Bewertung von 1 bis 5 Sternen.",
     "submit": "Feedback senden",
+    "submitError": "Senden hat leider nicht geklappt. Magst du es gleich noch einmal versuchen?",
     "submitting": "Wird gesendet …",
     "successTitle": "Danke für dein Feedback!",
     "successBody": "Wir haben deine Nachricht erhalten und lesen sie uns aufmerksam durch.",
@@ -165,16 +159,21 @@ export default {
     "title": "So findest du uns",
     "subtitle": "Komm vorbei oder ruf kurz an – wir sind für dich da.",
     "addressLabel": "Adresse",
-    "addressPlaceholder": "Musterstraße 1, 40210 Düsseldorf",
     "phoneLabel": "Telefon",
-    "phonePlaceholder": "+49 (0) 211 000000",
+    "phonePlaceholder": "noch nicht hinterlegt",
+    "emailLabel": "E-Mail",
     "mapCta": "Route planen",
-    "placeholderNote": "Platzhalter – bitte mit den echten Kontaktdaten ersetzen."
+    "placeholderNote": "Hinweis: Die Telefonnummer ist noch ein Platzhalter – bitte durch die echte Nummer ersetzen, sobald sie feststeht."
+  },
+  "legal": {
+    "eyebrow": "Rechtliches",
+    "title": "Impressum & Datenschutz",
+    "subtitle": "Pflichtangaben und Informationen zum Umgang mit deinen Daten auf dieser Website."
   },
   "footer": {
     "tagline": "Dein Büdchen um die Ecke.",
     "rights": "Alle Rechte vorbehalten.",
-    "madeWith": "Mit Liebe im Kiez betrieben.",
+    "madeWith": "Mit Liebe in Düsseldorf gemacht von Arash.",
     "legal": "Impressum & Datenschutz",
     "quickLinks": "Direkt zu",
     "getInTouch": "Kontakt"

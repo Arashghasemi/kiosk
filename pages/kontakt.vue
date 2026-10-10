@@ -9,10 +9,12 @@ useSeoMeta({
 const pageRef = ref<HTMLElement | null>(null)
 useReveal(pageRef)
 
-// Placeholders — replace with the real address, phone number and Maps link.
-const CONTACT_ADDRESS_PLACEHOLDER = null // e.g. 'Musterstraße 1, 40210 Düsseldorf'
-const CONTACT_PHONE_PLACEHOLDER = null // e.g. '+49 211 0000000'
-const GOOGLE_MAPS_URL_PLACEHOLDER = '#' // e.g. 'https://maps.google.com/?q=...'
+const CONTACT_ADDRESS = 'Lindenstraße 230, 40235 Düsseldorf'
+const CONTACT_EMAIL = 'lindenbuedchen@gmail.com'
+// Not provided yet — shown as a placeholder until the real number is set.
+const CONTACT_PHONE_PLACEHOLDER: string | null = null
+
+const GOOGLE_MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONTACT_ADDRESS)}`
 </script>
 
 <template>
@@ -27,7 +29,7 @@ const GOOGLE_MAPS_URL_PLACEHOLDER = '#' // e.g. 'https://maps.google.com/?q=...'
       <dl>
         <div class="contact-card__row">
           <dt>{{ t('contact.addressLabel') }}</dt>
-          <dd>{{ CONTACT_ADDRESS_PLACEHOLDER ?? t('contact.addressPlaceholder') }}</dd>
+          <dd>{{ CONTACT_ADDRESS }}</dd>
         </div>
         <div class="contact-card__row">
           <dt>{{ t('contact.phoneLabel') }}</dt>
@@ -37,9 +39,15 @@ const GOOGLE_MAPS_URL_PLACEHOLDER = '#' // e.g. 'https://maps.google.com/?q=...'
             </a>
           </dd>
         </div>
+        <div class="contact-card__row">
+          <dt>{{ t('contact.emailLabel') }}</dt>
+          <dd>
+            <a :href="`mailto:${CONTACT_EMAIL}`">{{ CONTACT_EMAIL }}</a>
+          </dd>
+        </div>
       </dl>
 
-      <a :href="GOOGLE_MAPS_URL_PLACEHOLDER" target="_blank" rel="noopener noreferrer" class="contact-card__cta">
+      <a :href="GOOGLE_MAPS_URL" target="_blank" rel="noopener noreferrer" class="contact-card__cta">
         <UIcon name="i-heroicons-map-pin" class="w-5 h-5" aria-hidden="true" />
         {{ t('contact.mapCta') }}
       </a>

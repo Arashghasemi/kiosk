@@ -8,6 +8,8 @@ useSeoMeta({
 
 const pageRef = ref<HTMLElement | null>(null)
 useReveal(pageRef)
+
+const showUpcomingChangeNote = computed(() => new Date() < new Date('2026-10-31'))
 </script>
 
 <template>
@@ -28,7 +30,10 @@ useReveal(pageRef)
 
       <aside class="hours-note linden-card" data-reveal>
         <UIcon name="i-heroicons-calendar-days" class="w-6 h-6 hours-note__icon" aria-hidden="true" />
-        <p>{{ t('hours.holidayNote') }}</p>
+        <div>
+          <p v-if="showUpcomingChangeNote" class="hours-note__upcoming">{{ t('hours.upcomingChangeNote') }}</p>
+          <p>{{ t('hours.holidayNote') }}</p>
+        </div>
       </aside>
     </div>
   </div>
@@ -83,5 +88,11 @@ useReveal(pageRef)
   color: var(--linden-green-700);
   flex-shrink: 0;
   margin-top: 0.1rem;
+}
+
+.hours-note__upcoming {
+  color: var(--linden-terracotta-600);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
 }
 </style>
