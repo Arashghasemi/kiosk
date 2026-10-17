@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-01-01',
   devtools: { enabled: true },
 
-  modules: ['@nuxt/ui', '@nuxtjs/i18n'],
+  modules: ['@nuxt/ui', '@nuxtjs/i18n', '@vercel/analytics'],
 
   runtimeConfig: {
     // Set via the NUXT_RESEND_API_KEY environment variable (Vercel → Settings → Environment Variables).

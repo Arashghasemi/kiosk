@@ -7,7 +7,6 @@ const localePath = useLocalePath()
   <section class="hero">
     <div class="linden-container hero__grid">
       <div class="hero__copy" data-reveal>
-        <p class="linden-eyebrow">{{ t('hero.eyebrow') }}</p>
         <h1 class="hero__title">{{ t('hero.title') }}</h1>
         <p class="hero__subtitle">{{ t('hero.subtitle') }}</p>
 

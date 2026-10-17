@@ -21,7 +21,6 @@ export default {
     "tagline": "Dein Büdchen um die Ecke."
   },
   "hero": {
-    "eyebrow": "Seit Generationen im Kiez",
     "title": "Der kurze Weg zu allem, was der Tag braucht.",
     "subtitle": "Kaltes Getränk, warmer Kaffee, das fehlende Teil für den Feierabend – und das Paket vom letzten Wochenende. Lindenbüdchen ist da, wenn die großen Läden schon zu haben.",
     "ctaHours": "Öffnungszeiten",
