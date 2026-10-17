@@ -55,7 +55,7 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { prerender: true }
+    '/': { prerender: false }
   },
 
   typescript: {
@@ -64,7 +64,7 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      crawlLinks: true
+      crawlLinks: false
     }
   }
 })
